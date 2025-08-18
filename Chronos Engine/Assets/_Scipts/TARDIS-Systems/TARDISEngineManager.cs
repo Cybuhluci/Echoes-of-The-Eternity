@@ -1,31 +1,35 @@
 using UnityEngine;
 using Luci.TARDIS;
-using Luci.TARDIS.Console;
-using Luci.TARDIS.EngineSystems;
+using Luci.TARDIS.ConsoleSystems;
 
-namespace Luci.TARDIS.Engine
+namespace Luci.TARDIS.EngineSystems
 {
     public class TARDISEngineManager : MonoBehaviour
     {
-        // --- im going to put each engine's systems full legal name as a tooltip maybe.
         [Header("Essential Engine Subsystems")]
-        public Engine_Demat dematCircuit;
-        public Engine_FluidLink fluidlinks;
+        public DematerialisationCircuit dematCircuit;
+        public FluidLinks fluidlinks;
 
         [Header("Optional Engine Subsytems")] 
-        public Engine_Chameleon chameleon;
-        public Engine_Antennae antennae;
-        public Engine_TemporalGrace temporalgrace;
-        public Engine_ShieldGen shieldgenerator;
-        public Engine_Navcom navigationcom;
-        public Engine_Stabilisers stabilisers;
-        public Engine_SoundSystem soundSystem;
+        public NavigationalComputer navigationcom;
+        public ChameleonCircuit chameleon;
+        public InterstitialAntennae antennae;
+        public TemporalGraceUnit temporalgrace;
+        public ShieldGenerator shieldgenerator;
+        public Stabilisers stabilisers;
+
+        [Header("Newbie Engine Subsystems")]
+        public DesperationCircuit desperation; 
+        public LifeSupport lifeSupport;
+        public BackupGenerator backupGenerator; 
+        public GravitationalCircuit gravitational;
+
+        [Header("TARDIS Sound System")]
+        public TARDISSoundSystem soundSystem;
 
         void Awake()
         {
-            // Get references if not assigned in Inspector
-            if (navigationcom == null) navigationcom = GetComponentInChildren<Engine_Navcom>();
-            if (dematCircuit == null) dematCircuit = GetComponentInChildren<Engine_Demat>();
+
         }
     }
 }
