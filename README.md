@@ -1,2 +1,2 @@
-# Echoes-of-The-Eternity
+# Echoes of The Eternity
 Doctor Who TARDIS Flight Simulator
